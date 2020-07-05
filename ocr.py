@@ -17,7 +17,7 @@ try:
     custom_config = r'--oem 3 --psm 6'
     txt_content = (pytesseract.image_to_string(img, config=custom_config))
 
-    with open('results/invoice.txt', 'w') as file:
+    with open(image_file + '.txt', 'w') as file:
         file.write(txt_content)
 
 except FileNotFoundError:

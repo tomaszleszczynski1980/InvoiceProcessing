@@ -1,0 +1,15 @@
+.idea
+.idea/
+.idea/*
+
+venv
+venv/
+venv/*
+
+images
+images/
+images/*
+
+results
+results/
+results/*
