@@ -64,10 +64,14 @@ def match_template(image, template):
     return cv2.matchTemplate(image, template, cv2.TM_CCOEFF_NORMED)
 
 
-image = cv2.imread('results/invoice.png')
-
-
+image = cv2.imread('images/invoice.png')
 gray = get_grayscale(image)
 thresh = thresholding(gray)
 opening = opening(gray)
 canny = canny(gray)
+
+custom_config = r'--oem 3 --psm 6'
+txt_content = (pytesseract.image_to_string(img, config=custom_config))
+
+with open('results/invoice_pre_processed.txt', 'w') as file:
+    file.write(txt_content)
