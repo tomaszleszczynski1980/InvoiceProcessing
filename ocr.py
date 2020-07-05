@@ -22,3 +22,6 @@ try:
 
 except FileNotFoundError:
     print(f'{argv[1]} not found')
+
+except TypeError as error:
+    print(error)
